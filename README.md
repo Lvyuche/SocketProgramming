@@ -20,4 +20,8 @@ sudo tc qdisc del dev eth1 root
 5. To change the network speed:
 sudo ethtool -s eth0 speed 10
 
+6. Generate random file:
+sudo dd if=/dev/urandom of=data.bin bs=1m count=100 && tr -cd '0-9' > data.bin
 
+7. SCP file to EC2:
+scp -i key2.pem s.cpp ubuntu@ec2-54-68-15-113.us-west-2.compute.amazonaws.com:/home/ubuntu/
